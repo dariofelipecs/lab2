@@ -1,12 +1,14 @@
 package lab2;
 
 public class Descanso {
-    private String statusGeral = "cansado"; //pq inicializa já com o valor?
+    private String statusGeral; //pq inicializa já com o valor?
     private int horasDescanso;
     private int numeroSemanas;
 
     // Comentário Atividade Arthur: Sem construtor de classe?
-
+    public Descanso() {
+        this.statusGeral = "cansado";
+    }
     public void defineHorasDescanso(int valor) {
         this.horasDescanso = valor;
     }

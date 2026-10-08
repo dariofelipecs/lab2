@@ -6,6 +6,7 @@ public class Disciplina {
     private double valorNota;
     private int horas;
     private double media;
+    private double[] notas;
 
     public Disciplina (String nomeDisciplina) {
         this.nomeDisciplina = nomeDisciplina;
@@ -15,11 +16,16 @@ public class Disciplina {
     }
     public void cadastraNota(int nota, double valorNota) {
         double[] notas = new double[4];
-        notas[nota] = valorNota;
+        notas[nota - 1] = valorNota;
+        this.media += valorNota;
     }
     public boolean aprovado(){
-
+        if (media / 4 >= 7.0){
+            return true;
+        } return false;
     }
+    @Override
     public String toString() {
+        return nomeDisciplina+" "+horas+" "+media+" "+notas;
     }
 }
